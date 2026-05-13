@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SINGHAYUSH24/Libgen.git"
+    "url": "git+https://github.com/Himanshu-singh23/Libgen.git"
   },
-  "author": "Ayush Singh",
+  "author": "Himanshu Singh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SINGHAYUSH24/Libgen/issues"
+    "url": "https://github.com/Himanshu-singh23/Libgen/issues"
   },
-  "homepage": "https://github.com/SINGHAYUSH24/Libgen#readme",
+  "homepage": "https://github.com/Himanshu-singh23/Libgen#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
@@ -24,7 +24,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.1",
-    "multer": "^2.0.2"
+    "multer": "^2.0.2",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

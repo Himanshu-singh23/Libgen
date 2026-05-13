@@ -1,10 +1,8 @@
 const Resource = require("../model/resource");
-
+const User=require("../model/User");
 const searchResources = async (req, res) => {
   try {
     const { q, type } = req.query;
-
-    // If no query → return all resources
     if (!q) {
       const resources = await Resource.find().sort({ createdAt: -1 });
       return res.json(resources);
@@ -33,7 +31,7 @@ const searchResources = async (req, res) => {
 
       case "category":
         query = {
-          category: { $regex: `^${q}$`, $options: "i" }
+          category: { $regex: q, $options: "i" }
         };
         break;
 
@@ -71,5 +69,27 @@ const searchResources = async (req, res) => {
     res.status(500).json({ message: "Search failed" });
   }
 };
-
-module.exports = { searchResources };
+const toggleBookmark = async (req, res) => {
+  try {
+    const userId = req.user.id; 
+    console.log(userId);
+    const resourceId = req.params.id;
+    console.log(resourceId);
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
+    const alreadyBookmarked = user.bookmarks.includes(resourceId);
+    if (alreadyBookmarked) {
+      user.bookmarks.pull(resourceId);
+    } else {
+      user.bookmarks.push(resourceId);
+    }
+    await user.save();
+    res.status(200).json({
+      success: true,
+      bookmarked: !alreadyBookmarked
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+module.exports = { searchResources,toggleBookmark };
