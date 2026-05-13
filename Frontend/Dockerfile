@@ -1,13 +1,14 @@
-
-
 FROM node:20 AS build
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+
+RUN npm install --force
 
 COPY . .
+
+RUN npm rebuild rollup
 
 RUN npm run build
 
