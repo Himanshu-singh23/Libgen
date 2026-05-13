@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --force
+# Clean install (fixes rollup issue permanently)
+RUN rm -rf node_modules package-lock.json || true
+RUN npm install --legacy-peer-deps
 
 COPY . .
-
-RUN npm rebuild rollup
 
 RUN npm run build
 
