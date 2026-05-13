@@ -31,7 +31,7 @@ const searchResources = async (req, res) => {
 
       case "category":
         query = {
-          category: { $regex: `^${q}$`, $options: "i" }
+          category: { $regex: q, $options: "i" }
         };
         break;
 

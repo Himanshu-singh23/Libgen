@@ -47,28 +47,28 @@ const handleSubmit = (e) => {
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      value: '+91 700-747-1499',
+      value: '+91 912-970-9682',
       href: 'https://wa.me/7007471499',
       color: '#25D366'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 (700) 747-1499',
-      href: 'tel:+917007471499',
+      value: '+91 912-970-9682',
+      href: 'tel:+919129709682',
       color: '#0EA5E9'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'Ayush-Singh-Profile',
+      value: 'Himanshu-Singh-Profile',
       href: 'https://linkedin.com/in/john-doe-profile',
       color: '#0077B5'
     },
     {
       icon: Mail,
       label: 'Email',
-      value: 'ayushsingh123102@gmail.com',
+      value: 'himanshusingh3290@gmail.com',
       href: 'mailto:hello@example.com',
       color: '#F97316'
     }
